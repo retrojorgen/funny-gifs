@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            background-color: hsl(210, 4%, 10%);
+            color: white;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #gifs-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        #gifs {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gifs-wrapper">
+        <img src="https://media.giphy.com/media/3ohs4qw8hkPShGeanS/giphy.gif" id="gifs" />
+    </div>
+    <script defer>
+        var gifLinks = [
+            "https://media.giphy.com/media/3ohs4qw8hkPShGeanS/giphy.gif",
+            "https://media.giphy.com/media/SjRgoSG1RTpYs/giphy-downsized-large.gif",
+            "https://media.giphy.com/media/iqsUYfkKstdC0/giphy.gif",
+            "https://media.giphy.com/media/eeicndnfjl55IgMqUE/giphy.gif",
+            "https://media.giphy.com/media/qqoaFu5Xsb3ji/giphy.gif",
+            "https://media.giphy.com/media/bTFGQtFDX4LfO/giphy.gif",
+            "https://media.giphy.com/media/z75PUpyuVxcxa/giphy.gif",
+            "https://media.giphy.com/media/KmlTchPoFQT84/giphy.gif",
+            "https://media.giphy.com/media/Jk4ZT6R0OEUoM/giphy.gif",
+            "https://media.giphy.com/media/lN9amhr8GZMhG/giphy.gif",
+            "https://media.giphy.com/media/xTiTnooneW4SYfch8Y/giphy.gif",
+            "https://media.giphy.com/media/xTk9ZH5U5vb76JhNHa/giphy.gif",
+            "https://media.giphy.com/media/5zkDXMbwJ7OiUT9vyn/giphy.gif",
+            "https://media.giphy.com/media/3o7TKPIg3kpnhhUEZG/giphy.gif",
+            "https://media.giphy.com/media/Jd5YlXOVTcQtW/giphy.gif",
+            "https://media.giphy.com/media/tXNMqUmtvyuIw/giphy.gif",
+            "https://media.giphy.com/media/10hO9c6zalcju/giphy.gif",
+            "https://media.giphy.com/media/9lEGNc2hPkmevAciHq/giphy-downsized-large.gif",
+            "https://media.giphy.com/media/qP5LrJZOjPxi8/giphy.gif",
+            "https://media.giphy.com/media/dJEMs13SrsiuA/giphy.gif"
+        ]
+        function setRandomGif() {
+            let randomGif = gifLinks[Math.floor(Math.random() * gifLinks.length - 1) + 0]
+            document.getElementById("gifs").src = randomGif;
+        }
+        setRandomGif();
+        setInterval(setRandomGif, 10000);
+    </script>
+</body>
+
+</html>

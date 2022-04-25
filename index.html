@@ -25,8 +25,12 @@
             padding: 40px;
         }
 
-        #gifs {
+        .gif {
             height: 50%;
+        }
+
+        .hidden {
+            display: none;
         }
 
         * {
@@ -37,34 +41,39 @@
 
 <body>
     <div id="gifs-wrapper">
-        <img src="https://media.giphy.com/media/3ohs4qw8hkPShGeanS/giphy.gif" id="gifs" />
+        <img src="https://media.giphy.com/media/3ohs4qw8hkPShGeanS/giphy.gif" id="gifs-1" class="gif hidden" />
+        <img src="https://media.giphy.com/media/SjRgoSG1RTpYs/giphy-downsized-large.gif" id="gifs-2"
+            class="gif hidden" />
+        <img src="https://media.giphy.com/media/iqsUYfkKstdC0/giphy.gif" id="gifs-3" class="gif hidden" />
+        <img src="https://media.giphy.com/media/eeicndnfjl55IgMqUE/giphy.gif" id="gifs-4" class="gif hidden" />
+        <img src="https://media.giphy.com/media/qqoaFu5Xsb3ji/giphy.gif" id="gifs-4" class="gif hidden" />
+        <img src="https://media.giphy.com/media/bTFGQtFDX4LfO/giphy.gif" id="gifs-5" class="gif hidden" />
+        <img src="https://media.giphy.com/media/z75PUpyuVxcxa/giphy.gif" id="gifs-6" class="gif hidden" />
+        <img src="https://media.giphy.com/media/z75PUpyuVxcxa/giphy.gif" id="gif-7" class="gif hidden" />
+        <img src="https://media.giphy.com/media/KmlTchPoFQT84/giphy.gif" id="gif-8" class="gif hidden" />
+        <img src="https://media.giphy.com/media/Jk4ZT6R0OEUoM/giphy.gif" id="gif-9" class="gif hidden" />
+        <img src="https://media.giphy.com/media/lN9amhr8GZMhG/giphy.gif" id="gif-10" class="gif hidden" />
+        <img src="https://media.giphy.com/media/xTiTnooneW4SYfch8Y/giphy.gif" id="gif-11" class="gif hidden" />
+        <img src="https://media.giphy.com/media/xTk9ZH5U5vb76JhNHa/giphy.gif" id="gif-12" class="gif hidden" />
+        <img src="https://media.giphy.com/media/5zkDXMbwJ7OiUT9vyn/giphy.gif" id="gif-13" class="gif hidden" />
+        <img src="https://media.giphy.com/media/3o7TKPIg3kpnhhUEZG/giphy.gif" id="gif-14" class="gif hidden" />
+        <img src="https://media.giphy.com/media/Jd5YlXOVTcQtW/giphy.gif" id="gif-15" class="gif hidden" />
+        <img src="https://media.giphy.com/media/tXNMqUmtvyuIw/giphy.gif" id="gif-16" class="gif hidden" />
+        <img src="https://media.giphy.com/media/10hO9c6zalcju/giphy.gif" id="gif-17" class="gif hidden" />
+        <img src="https://media.giphy.com/media/9lEGNc2hPkmevAciHq/giphy-downsized-large.gif" id="gif-18"
+            class="gif hidden" />
+        <img src="https://media.giphy.com/media/qP5LrJZOjPxi8/giphy.gif" id="gif-19" class="gif hidden" />
+        <img src="https://media.giphy.com/media/dJEMs13SrsiuA/giphy.gif" id="gif-20" class="gif hidden" />
     </div>
     <script defer>
-        var gifLinks = [
-            "https://media.giphy.com/media/3ohs4qw8hkPShGeanS/giphy.gif",
-            "https://media.giphy.com/media/SjRgoSG1RTpYs/giphy-downsized-large.gif",
-            "https://media.giphy.com/media/iqsUYfkKstdC0/giphy.gif",
-            "https://media.giphy.com/media/eeicndnfjl55IgMqUE/giphy.gif",
-            "https://media.giphy.com/media/qqoaFu5Xsb3ji/giphy.gif",
-            "https://media.giphy.com/media/bTFGQtFDX4LfO/giphy.gif",
-            "https://media.giphy.com/media/z75PUpyuVxcxa/giphy.gif",
-            "https://media.giphy.com/media/KmlTchPoFQT84/giphy.gif",
-            "https://media.giphy.com/media/Jk4ZT6R0OEUoM/giphy.gif",
-            "https://media.giphy.com/media/lN9amhr8GZMhG/giphy.gif",
-            "https://media.giphy.com/media/xTiTnooneW4SYfch8Y/giphy.gif",
-            "https://media.giphy.com/media/xTk9ZH5U5vb76JhNHa/giphy.gif",
-            "https://media.giphy.com/media/5zkDXMbwJ7OiUT9vyn/giphy.gif",
-            "https://media.giphy.com/media/3o7TKPIg3kpnhhUEZG/giphy.gif",
-            "https://media.giphy.com/media/Jd5YlXOVTcQtW/giphy.gif",
-            "https://media.giphy.com/media/tXNMqUmtvyuIw/giphy.gif",
-            "https://media.giphy.com/media/10hO9c6zalcju/giphy.gif",
-            "https://media.giphy.com/media/9lEGNc2hPkmevAciHq/giphy-downsized-large.gif",
-            "https://media.giphy.com/media/qP5LrJZOjPxi8/giphy.gif",
-            "https://media.giphy.com/media/dJEMs13SrsiuA/giphy.gif"
-        ]
         function setRandomGif() {
-            let randomGif = gifLinks[Math.floor(Math.random() * gifLinks.length - 1) + 0]
-            document.getElementById("gifs").src = randomGif;
+            let gifs = document.getElementsByClassName("gif");
+            for (const gif of gifs) {
+                gif.classList.add("hidden");
+            }
+            let randomGifNumber = Math.floor(Math.random() * 20) + 1;
+            console.log("random gif", document.getElementById("gif-" + randomGifNumber), "gif-" + randomGifNumber)
+            document.getElementById("gif-" + randomGifNumber).classList.remove("hidden");
         }
         setRandomGif();
         setInterval(setRandomGif, 10000);
